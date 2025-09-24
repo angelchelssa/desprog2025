@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Membuat Form</title>
+    </head>
+
+    <body>
+        <form method="POST" action="gamnbar.html">
+            <h4>FORM</h4>
+            <input type="text" name="var1" SIZE="20" VALUE="Enter your name here.">
+            <BR></BR>
+            <input type="text" name="alamat" SIZE="25" VALUE="Enter your address here.">
+            <BR></BR>
+            <B>How old are you?</B>
+            <BR>
+                <input type="radio" name="var4" value="r1">10 - 15 <BR>
+                <input type="radio" name="var4" value="r2">16 - 20 <BR>
+                <input type="radio" name="var4" value="r3">21 - 25 <BR></BR>
+                    <b>Which one do you have?</b><br><br>
+                    <input type="checkbox" name="vechine1" value="Bike" > I have a bike <br>
+                    <input type="checkbox" name="vechine2" value="car"> I have a car <br>
+                    <input type="checkbox" name="vechine3" value="Boat"> I have a boat <br>
+                    <input type="checkbox" name="vechine4" value="Plane" checked> I have a plane <br>
+                <br>
+                <b>Where are yoou from?</b>
+                    <br>
+                        <select name="var6" size="1">
+                            <option value="BG"> BULGARIA
+                            <option value="UK"> United Kingdom
+                            <option value="USA" selected> USA
+                            <option value="INDO" selected> Indonesia
+                        </select>
+                <br><br>
+                    <b>Enter your private code </b>  
+                    <input type="text" name="kode" SIZE="25">
+                    <br><br>
+                <label for="comment">Your comment: </label><br>
+                <textarea id="comment" name="comment" rows="5" cols="50">fill this area</textarea>
+                <br><br>
+            <input type="submit" name="var5" value="send">
+            <input type="reset" name="var6" value="clear">
+                </form>
+    </body>
+</html>
