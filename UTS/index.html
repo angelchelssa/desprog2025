@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angel's Caffe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand">
+        <div class="logo">AYE</div>
+        <h1>AYE Coffee House</h1>
+      </div>
+    </header>
+    <div class="intro">
+        <p>Selamat datang di AYE Coffee House</p>
+        <hr>
+    </div>
+    <main class="main">
+      <section class="menu">
+        <h2>Menu</h2>
+        <div class="menu-grid" id="menuGrid"></div>
+      </section>
+
+      <aside class="cart">
+        <h3>Keranjang <span id="cartCount">(0)</span></h3>
+        <div id="cartList" class="cart-list">Keranjang kosong</div>
+
+        <div class="checkout">
+          <div class="total">
+            <span>Total</span>
+            <span id="cartTotal">Rp0</span>
+          </div>
+
+          <div class="payment">
+            <label>Uang Customer</label>
+            <input type="number" id="payInput" placeholder="Masukkan nominal">
+            <div id="changeDisplay"></div>
+          </div>
+
+          <button id="checkoutBtn">Bayar</button>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <!-- STRUK MODAL -->
+  <div id="receiptModal" class="modal">
+    <div class="modal-content">
+      <h2>Struk Pembayaran</h2>
+      <div id="receiptContent"></div>
+      <button id="closeReceiptBtn">Tutup</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

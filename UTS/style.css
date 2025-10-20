@@ -1,0 +1,288 @@
+:root {                                     /* Variabel warna dan gaya global */
+  --bg: #1e1e2e;                           /* Warna background utama */
+  --card: #2a2a3d;                         /* Warna latar untuk card/menu */
+  --accent: #a78bfa;                       /* Warna ungu utama (highlight) */
+  --accent2: #c4b5e7;                      /* Warna ungu muda pendukung */
+  --text: #ffffff;                         /* Warna teks utama (putih) */
+  --muted: #3f3f46;                        /* Warna abu-abu gelap (elemen sekunder) */
+  --radius: 12px;                          /* Radius lengkung standar elemen */
+}
+
+body {                                     /* Gaya umum halaman */
+  font-family: 'Inter', sans-serif;        /* Jenis huruf utama */
+  background: linear-gradient(180deg, var(--bg), #1e1e2e); /* Latar gradasi vertikal */
+  color: var(--text);                      /* Warna teks putih */
+  margin: 0;                               /* Hilangkan margin bawaan */
+  display: flex;                           /* Posisikan isi di tengah horizontal */
+  justify-content: center;
+  padding: 30px;                           /* Jarak isi dari tepi layar */
+}
+
+.app {                                     /* Kontainer utama aplikasi */
+  width: 100%;
+  max-width: 1200px;                       /* Lebar maksimal tampilan */
+}
+
+header {                                   /* Bagian header (atas) */
+  display: flex;
+  justify-content: space-between;          /* Logo di kiri, search di kanan */
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.brand {                                   /* Area logo dan nama kafe */
+  display: flex;
+  align-items: center;
+  gap: 10px;                               /* Jarak antar elemen brand */
+}
+
+.logo {                                    /* Desain logo kotak ungu */
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2)); /* Gradasi ungu */
+  color: #001;
+  border-radius: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;                 /* Teks logo di tengah */
+  align-items: center;
+}
+
+.search {                                  /* Area pencarian menu */
+  display: flex;
+  gap: 10px;
+}
+
+.search input,
+.search select {
+  padding: 10px 14px;
+  border-radius: 10px;                     /* Sudut melengkung */
+  border: none;
+  background: var(--card);                 /* Warna gelap lembut */
+  color: var(--text);                      /* Warna teks putih */
+}
+
+.main {                                    /* Area utama: menu + keranjang */
+  display: grid;
+  grid-template-columns: 2fr 1fr;          /* Dua kolom: 2 bagian menu, 1 bagian cart */
+  gap: 20px;                               /* Jarak antar kolom */
+}
+
+.intro {                                   /* Teks pembuka di atas menu */
+  text-align: center;
+  margin-top: -20px;
+  margin-bottom: 25px;
+  color: var(--accent2);
+  font-style: italic;
+  font-size: 20px;
+}
+
+.intro hr {                                /* Garis kecil di bawah teks intro */
+  width: 60px;
+  border: 1px solid var(--accent);
+  margin: 8px auto 0 auto;
+}
+
+/* ===== MENU GRID TANPA SCROLL ===== */
+.menu {
+  position: relative;
+  overflow: visible;
+}
+
+.menu h2 {
+  margin-bottom: 15px;
+}
+
+.menu-grid {                               /* Tata letak daftar menu */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Grid fleksibel */
+  gap: 16px;
+  padding-bottom: 10px;
+}
+
+.menu-grid::-webkit-scrollbar {
+  display: none;                           /* Sembunyikan scrollbar */
+}
+
+.menu-item {                               /* Kartu tiap item menu */
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;         /* Animasi saat hover */
+}
+
+.menu-item:hover {
+  transform: scale(1.03);                  /* Membesar sedikit saat disorot */
+}
+
+.menu-item img {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;                       /* Gambar tetap proporsional */
+  margin-bottom: 8px;
+}
+
+.menu-item h3 {
+  margin: 4px 0;
+  font-size: 16px;
+}
+
+.menu-item p {
+  margin: 4px 0;
+  color: rgb(255, 255, 255);               /* Teks putih */
+}
+
+.menu-item button {                          /* Tombol tambah ke keranjang */
+  margin-top: 6px;
+  border: none;
+  background: #c4b5e7;                     /* Ungu muda */
+  color: rgb(0, 0, 0);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.menu-item button:hover {
+  background: #a78bfa;                     /* Ungu tua saat hover */
+}
+
+/* ===== CART ===== */
+.cart {                                    /* Bagian keranjang belanja */
+  background: var(--card);
+  padding: 16px;
+  border-radius: var(--radius);
+}
+
+.cart h3 {
+  margin-top: 0;
+}
+
+.cart-list {
+  min-height: 100px;
+  margin-bottom: 10px;
+}
+
+.cart-item {
+  margin-bottom: 8px;
+}
+
+.cart-item .qty {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cart-item button {
+  border: none;
+  background: var(--bg);
+  color: rgb(255, 255, 255);
+  border-radius: 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.payment input {
+  width: 100%;
+  padding: 6px;
+  border-radius: 8px;
+  border: none;
+  background: var(--bg);
+  color: rgb(254, 244, 244);
+  margin-top: 4px;
+}
+
+#changeDisplay {
+  margin-top: 5px;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+button#checkoutBtn {
+  width: 100%;
+  background: var(--accent2);              /* Warna tombol checkout */
+  color: rgb(11, 10, 10);
+  font-weight: bold;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button#checkoutBtn:hover {
+  background: var(--accent);               /* Warna berubah saat hover */
+}
+
+/* ===== STRUK MODAL ===== */
+.modal {                                  /* Latar belakang popup struk */
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {                          /* Isi dari struk (tengah layar) */
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  font-family: monospace;                 /* Font seperti struk kasir */
+}
+
+.modal-content h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.modal-content table {
+  width: 100%;
+  font-size: 14px;
+  border-collapse: collapse;
+}
+
+.modal-content td {
+  padding: 3px 0;
+}
+
+.modal-content hr {
+  border: none;
+  border-top: 1px dashed rgb(44, 41, 41);
+  margin: 8px 0;
+}
+
+#closeReceiptBtn {                        /* Tombol tutup struk */
+  margin-top: 10px;
+  width: 100%;
+  background: #222;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {               /* Pengaturan tampilan HP/tablet */
+  .main {
+    grid-template-columns: 1fr;           /* Satu kolom saja */
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);/* Dua kolom menu di layar kecil */
+  }
+}
